@@ -79,3 +79,51 @@ qplot(samples, geom = "density") +
   stat_function(fun = f,  color = "red")
 ```
 
+
+
+
+### Related packages
+
+The __Runuran__ package also implements a sampler from the chi distribution, using the function `Runuran::urchi()`.  (It also provides `udchi()`, but not `upchi()` or `uqchi()`.)  Here's a comparison of how fast the samplers are, with the punch line being that __Runuran__ is about 3x faster for larger numbers of samples, whereas __chi__ is much faster for smaller samples (e.g. 100 or 1000).
+
+```{r}
+library(Runuran)
+library(microbenchmark)
+
+# chi::rchi() is much faster for small datasets
+microbenchmark(
+  urchi(1e3, 5),
+  rchi(1e3, 5)
+)
+
+# Runuran::urchi is ~3x faster for larger datasets
+microbenchmark(
+  urchi(1e5, 5),
+  rchi(1e5, 5)
+)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
