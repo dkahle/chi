@@ -7,6 +7,6 @@ BugReports: https://github.com/dkahle/chi/issues
 Authors@R: person("David", "Kahle", email = "david.kahle@gmail.com", role = c("aut", "cre", "cph"))
 Description: Light weight implementation of the standard distribution 
   functions for the chi distribution, wrapping those for the chi-squared 
-  distribution that already provided in the stats package.
+  distribution in the stats package.
 License: GPL-2
 RoxygenNote: 5.0.1
