@@ -5,8 +5,8 @@ Version: 0.0
 URL: https://github.com/dkahle/chi
 BugReports: https://github.com/dkahle/chi/issues
 Authors@R: person("David", "Kahle", email = "david.kahle@gmail.com", role = c("aut", "cre", "cph"))
-Description: Standard distribution functions for the chi distribution,
-  wrapping those for the chi-squared distribution that are already 
-  provided in the stats package.
+Description: Light weight implementation of the standard distribution 
+  functions for the chi distribution, wrapping those for the chi-squared 
+  distribution that already provided in the stats package.
 License: GPL-2
 RoxygenNote: 5.0.1
