@@ -6,10 +6,12 @@
 
 ### Getting **chi**
 
-<!-- There are two ways to get __chi__.  For the [CRAN version](https://cran.r-project.org/package=chi), use -->
-<!-- ```{r, eval=FALSE} -->
-<!-- install.packages("chi") -->
-<!-- ``` -->
+There are two ways to get **chi**. For the [CRAN version](https://cran.r-project.org/package=chi), use
+
+``` r
+install.packages("chi")
+```
+
 For the development version, use
 
 ``` r
@@ -30,7 +32,7 @@ x <- seq(0, 6, .01)
 qplot(x, dchi(x, 7), geom = "line")
 ```
 
-![](figures/README-unnamed-chunk-3-1.png)
+![](figures/README-unnamed-chunk-4-1.png)
 
 The [CDF](https://en.wikipedia.org/wiki/Cumulative_distribution_function) can be evaluated with the `pchi()` function:
 
@@ -73,7 +75,7 @@ qplot(samples, geom = "density") +
   stat_function(fun = f,  color = "red")
 ```
 
-![](figures/README-unnamed-chunk-8-1.png)
+![](figures/README-unnamed-chunk-9-1.png)
 
 ### Related packages
 
@@ -89,9 +91,9 @@ microbenchmark(
   rchi(1e3, 5)
 )
 #  Unit: microseconds
-#             expr     min       lq     mean   median      uq      max neval
-#   urchi(1000, 5) 769.381 793.7115 832.4172 799.3135 806.958 3292.963   100
-#    rchi(1000, 5) 111.863 123.2345 126.9988 127.0870 130.449  150.689   100
+#             expr     min       lq     mean   median       uq      max neval
+#   urchi(1000, 5) 825.422 850.5585 880.7449 856.8125 868.9770 1448.327   100
+#    rchi(1000, 5) 110.999 123.6235 127.9479 126.9330 130.2645  187.298   100
 
 # Runuran::urchi is ~3x faster for larger datasets
 microbenchmark(
@@ -100,9 +102,9 @@ microbenchmark(
 )
 #  Unit: milliseconds
 #              expr       min        lq      mean    median        uq
-#   urchi(1e+05, 5)  4.083681  4.178608  4.511939  4.269959  4.541398
-#    rchi(1e+05, 5) 11.672521 11.812342 12.280694 11.875979 12.148917
+#   urchi(1e+05, 5)  4.166562  4.243678  4.454931  4.310281  4.395841
+#    rchi(1e+05, 5) 11.684158 11.800020 12.021484 11.859692 12.014971
 #         max neval
-#    7.920432   100
-#   30.788091   100
+#    6.312761   100
+#   13.826048   100
 ```
