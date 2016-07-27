@@ -1,8 +1,8 @@
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-**invgamma**
-============
+**chi**
+=======
 
-**invgamma** implements the `(d/p/q/r)` statistics functions for the [chi distribution](https://en.wikipedia.org/wiki/Chi_distribution) in [R](http://cran.r-project.org). It is ideal for using in other packages since it is lightweight and leverages the `(d/p/q/r)chisq()` line of functions maintained by CRAN.
+**chi** implements the `(d/p/q/r)` statistics functions for the [chi distribution](https://en.wikipedia.org/wiki/Chi_distribution) in [R](http://cran.r-project.org). It is ideal for using in other packages since it is lightweight and leverages the `(d/p/q/r)chisq()` line of functions maintained by CRAN.
 
 ### Getting **chi**
 
@@ -89,9 +89,9 @@ microbenchmark(
   rchi(1e3, 5)
 )
 #  Unit: microseconds
-#             expr     min       lq     mean  median      uq      max neval
-#   urchi(1000, 5) 772.632 792.1820 800.0676 796.931 804.387 1012.742   100
-#    rchi(1000, 5) 111.065 122.7915 126.3337 125.820 129.365  193.651   100
+#             expr     min       lq     mean   median       uq      max neval
+#   urchi(1000, 5) 771.993 791.3815 843.6624 801.8635 815.9415 4392.642   100
+#    rchi(1000, 5) 112.596 124.3120 128.1074 128.2890 131.3085  143.278   100
 
 # Runuran::urchi is ~3x faster for larger datasets
 microbenchmark(
@@ -99,10 +99,10 @@ microbenchmark(
   rchi(1e5, 5)
 )
 #  Unit: milliseconds
-#              expr      min        lq      mean    median        uq
-#   urchi(1e+05, 5)  3.99507  4.101706  4.296319  4.171271  4.293015
-#    rchi(1e+05, 5) 11.66141 11.783991 12.009392 11.820730 11.886867
+#              expr       min        lq      mean    median        uq
+#   urchi(1e+05, 5)  4.077721  4.200014  4.386919  4.263196  4.393182
+#    rchi(1e+05, 5) 11.747136 11.885282 12.135708 11.935371 12.060332
 #         max neval
-#    5.582405   100
-#   14.776183   100
+#    5.707233   100
+#   14.873041   100
 ```
