@@ -50,7 +50,7 @@ qplot(x, dchi(x, 7), geom = "line")
 ```
 
 
-The [CDF](https://en.wikipedia.org/wiki/Cumulative_distribution_function) can be evaluated with the `pinvgamma()` function:
+The [CDF](https://en.wikipedia.org/wiki/Cumulative_distribution_function) can be evaluated with the `pchi()` function:
 ```{r}
 f <- function(x) dchi(x, 7)
 q <- 2

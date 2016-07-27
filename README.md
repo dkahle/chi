@@ -32,7 +32,7 @@ qplot(x, dchi(x, 7), geom = "line")
 
 ![](figures/README-unnamed-chunk-3-1.png)
 
-The [CDF](https://en.wikipedia.org/wiki/Cumulative_distribution_function) can be evaluated with the `pinvgamma()` function:
+The [CDF](https://en.wikipedia.org/wiki/Cumulative_distribution_function) can be evaluated with the `pchi()` function:
 
 ``` r
 f <- function(x) dchi(x, 7)
@@ -89,9 +89,9 @@ microbenchmark(
   rchi(1e3, 5)
 )
 #  Unit: microseconds
-#             expr     min       lq     mean   median       uq      max neval
-#   urchi(1000, 5) 771.993 791.3815 843.6624 801.8635 815.9415 4392.642   100
-#    rchi(1000, 5) 112.596 124.3120 128.1074 128.2890 131.3085  143.278   100
+#             expr     min       lq     mean   median      uq      max neval
+#   urchi(1000, 5) 769.381 793.7115 832.4172 799.3135 806.958 3292.963   100
+#    rchi(1000, 5) 111.863 123.2345 126.9988 127.0870 130.449  150.689   100
 
 # Runuran::urchi is ~3x faster for larger datasets
 microbenchmark(
@@ -100,9 +100,9 @@ microbenchmark(
 )
 #  Unit: milliseconds
 #              expr       min        lq      mean    median        uq
-#   urchi(1e+05, 5)  4.077721  4.200014  4.386919  4.263196  4.393182
-#    rchi(1e+05, 5) 11.747136 11.885282 12.135708 11.935371 12.060332
+#   urchi(1e+05, 5)  4.083681  4.178608  4.511939  4.269959  4.541398
+#    rchi(1e+05, 5) 11.672521 11.812342 12.280694 11.875979 12.148917
 #         max neval
-#    5.707233   100
-#   14.873041   100
+#    7.920432   100
+#   30.788091   100
 ```
