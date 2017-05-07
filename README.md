@@ -32,7 +32,7 @@ x <- seq(0, 6, .01)
 qplot(x, dchi(x, 7), geom = "line")
 ```
 
-![](figures/README-unnamed-chunk-4-1.png)
+![](tools/README-unnamed-chunk-4-1.png)
 
 The [CDF](https://en.wikipedia.org/wiki/Cumulative_distribution_function) can be evaluated with the `pchi()` function:
 
@@ -75,7 +75,7 @@ qplot(samples, geom = "density") +
   stat_function(fun = f,  color = "red")
 ```
 
-![](figures/README-unnamed-chunk-9-1.png)
+![](tools/README-unnamed-chunk-9-1.png)
 
 ### Related packages
 
@@ -91,9 +91,12 @@ microbenchmark(
   rchi(1e3, 5)
 )
 #  Unit: microseconds
-#             expr     min       lq     mean   median       uq      max neval
-#   urchi(1000, 5) 825.422 850.5585 880.7449 856.8125 868.9770 1448.327   100
-#    rchi(1000, 5) 110.999 123.6235 127.9479 126.9330 130.2645  187.298   100
+#             expr     min       lq     mean   median      uq      max neval
+#   urchi(1000, 5) 784.582 808.7745 911.0466 838.4780 929.167 1859.345   100
+#    rchi(1000, 5) 109.266 125.1120 143.1345 131.0915 145.558  333.781   100
+#   cld
+#     b
+#    a
 
 # Runuran::urchi is ~3x faster for larger datasets
 microbenchmark(
@@ -102,9 +105,9 @@ microbenchmark(
 )
 #  Unit: milliseconds
 #              expr       min        lq      mean    median        uq
-#   urchi(1e+05, 5)  4.166562  4.243678  4.454931  4.310281  4.395841
-#    rchi(1e+05, 5) 11.684158 11.800020 12.021484 11.859692 12.014971
-#         max neval
-#    6.312761   100
-#   13.826048   100
+#   urchi(1e+05, 5)  4.077995  4.317686  4.765376  4.512885  4.954472
+#    rchi(1e+05, 5) 11.912304 12.291699 13.001405 12.669712 13.460673
+#         max neval cld
+#    6.763741   100  a 
+#   15.766955   100   b
 ```
